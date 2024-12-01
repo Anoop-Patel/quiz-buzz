@@ -1,9 +1,13 @@
 @import url("./user/index.scss");
+@import url("./admin/index.scss");
+
 @import url("./component/lineloader.scss");
+@import url("./component/circleloader.scss");
+
 
 .App{
     background-color: #fff;
-    height: 100vh;
+   min-height: 100vh;
     width: 100vw;
     background-image: url("../image/bgimage.png");
     object-fit: cover;

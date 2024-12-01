@@ -1,0 +1,29 @@
+.circle-loader {
+    width: 160px; 
+    height: 160px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    &__progress {
+      width: 150px; 
+      height: 150px;
+      border-radius: 50%;
+      background: conic-gradient(#28a745 0%, #e0e0e0 0% 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    &__inner {
+      width: 135px; 
+      height: 135px;
+      background-color: rgb(248, 254, 248);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font: 600 2rem/1 "sans-serif";    }
+  }
+  

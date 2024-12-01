@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 import { Bgimage } from "../../assets/image";
 
-const QuizHome = () => {
+const QuizHome = ({ onOptionClick }) => {
   return (
     <div className="user-home-wrapper">
       <div className="quiz-home">
@@ -14,16 +14,20 @@ const QuizHome = () => {
         <div className="topic-wrapper">
           {[...Array(5)].map((item, key) => {
             return (
-              <div className="topic-box">
-                <img src={Bgimage} altt="icon" className="icon" lazy="loading" />
-                <span className="name"> Name</span>
+              <div
+                className="topic-box"
+                key={key}
+                onClick={onOptionClick} 
+              >
+                <img src={Bgimage} alt="icon" className="icon" loading="lazy" />
+                <span className="name">Name</span>
               </div>
             );
           })}
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default QuizHome
+export default QuizHome;

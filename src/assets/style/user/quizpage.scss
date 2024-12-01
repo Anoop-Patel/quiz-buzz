@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 8px;
+    margin-bottom: 2rem;
     .box {
       display: flex;
       align-items: center;
@@ -24,10 +24,25 @@
         font: 700 1.8rem/1 "sans-serif";
       }
     }
+    .result-box {
+      padding: 4px 6px;
+      width: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      border-radius: 12px;
+      height: 35px;
+      background-color: green;
+      color: #fff;
+      font: 600 1.1rem/1 "sans-serif";
+      letter-spacing: 1px;
+    }
   }
   .progress {
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -108,38 +123,44 @@
           display: flex;
           align-items: center;
           gap: 4px;
-          .input {
-            margin: 4px 0px;
-            width: 50%;
-            text-align: center;
-            border: none;
-            line-height: 1.2;
-            padding: 6px;
-            min-height: 70px;
-            border-radius: 12px;
-            background-color: rgb(227, 226, 226);
+          width: 350px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          border-radius: 8px;
+          padding: 4px;
+          background-color: rgb(230, 230, 252);
+          cursor: pointer;
+          &:focus-visible {
+            outline: none;
+          }
+
+          &:hover {
+            background-color: rgb(252, 234, 228);
+          }
+          &.correct {
+            background-color: rgb(222, 251, 222);
+          }
+          &.wrong {
+            background-color: rgb(255, 233, 233);
+          }
+          &.select {
+            background-color: rgb(252, 234, 228);
+          }
+          .number {
+            border-radius: 8px;
+            height: 40px;
+            width: 40px;
+            align-items: center;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
             color: black;
-            font-size: 0.8rem;
-            resize: none;
-            overflow-y: hidden;
-            transition: height 0.2s ease;
-
-            &:focus-visible {
-              outline: none;
-            }
-            &.answer {
-              background-color: rgb(230, 230, 252);
-
-              &:hover {
-                background-color: rgb(221, 221, 252);
-              }
-              &.correct {
-                background-color: rgb(222, 251, 222);
-              }
-              &.wrong {
-                background-color: rgb(255, 233, 233);
-              }
-            }
+            font: 600 1.4rem/1 "sans-serif";
+          }
+          .option {
+            color: black;
+            font: 400 1.3rem/1 "sans-serif";
           }
         }
         .note {
@@ -172,4 +193,68 @@
       }
     }
   }
+}
+
+.result-page-wrapper{
+  width: 100vw;
+  height: calc(100vh - 61px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+.result-info{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border: 2px solid green;
+  border-radius: 12px;
+  background-color: rgb(245, 254, 245);
+  .result-graph{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .name{
+      display: flex;
+      gap: 4px;
+      flex-direction: column;
+      padding: 10px;
+      .user{
+        font: 600 1.6rem/1 "sans-serif";
+        color: black;
+      }
+      .title{
+        font: 500 1.2rem/1 "sans-serif";
+        color: black;
+        .result{
+          font-weight: 600;
+        }
+      }
+    }
+   
+  }
+  .info{
+    display: flex;
+  
+    flex-direction: column;
+    .heading{
+      text-align: start;
+      font: 600 1.2rem/1 "sans-serif";
+     color: black;
+     margin-bottom: 2px;
+    }
+    .data{
+      display: flex; 
+      align-items: center;
+      gap: 20px;
+     
+    }
+  }
+  .result{
+    text-align: center;
+    margin-bottom: 1.4rem;
+      font: 600 1.4rem/1 "sans-serif";
+     color: rgb(53, 1, 1);
+  }
+}
 }
