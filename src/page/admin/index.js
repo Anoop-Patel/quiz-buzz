@@ -5,12 +5,16 @@ import NavigationDrawer from "./NavigationDrawer.js";
 import Grid from "./Grid.js";
 
 const AdminHome = () => {
+  const handleSubmit = (quizData) => {
+    console.log("Submitted Quiz Data:", quizData);
+    // Handle submission logic (e.g., API call)
+  };
 
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="admin-home">
         <NavigationDrawer />
-        <Grid />
+        <Grid onSubmit={handleSubmit} />
       </div>
     </DndProvider>
   );

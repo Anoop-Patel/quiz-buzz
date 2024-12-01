@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDrop } from "react-dnd";
 import GridItem from "./GridItem";
 
-const Grid = () => {
+const Grid = ({ onSubmit }) => {
   const [items, setItems] = useState({
     quizname: null,
     timer: null,
@@ -69,8 +69,7 @@ const Grid = () => {
       timer: items.timer?.questionData?.value,
       questions: items.questions,
     };
-    console.log("Submitted Quiz Data:", quizData);
-    // Handle submission logic (e.g., API call)
+    onSubmit(quizData); 
   };
 
   return (
@@ -92,30 +91,31 @@ const Grid = () => {
           </div>
         ))}
 
-<div className="question-box">
-  {items.questions.length > 0 ? (
-    <>
-      <GridItem
-        id="question"
-        questionData={items?.questions[currentQuestionIndex]}
-        onUpdateQuestion={(updatedQuestion) => updateQuestion(currentQuestionIndex, updatedQuestion)}
-      />
-      <div className="question-navigation">
-        <button onClick={handlePrevQuestion} disabled={currentQuestionIndex === 0} className="button">
-          Previous
-        </button>
-        <span>
-          {currentQuestionIndex + 1}/{items.questions.length}
-        </span>
-        <button onClick={handleNextQuestion} className="button">Next</button>
-      </div>
-    </>
-  ) : (
-    <div className="placeholder">Add Questions</div>
-  )}
-</div>
+        <div className="question-box">
+          {items.questions.length > 0 ? (
+            <>
+              <GridItem
+                id="question"
+                questionData={items?.questions[currentQuestionIndex]}
+                onUpdateQuestion={(updatedQuestion) => updateQuestion(currentQuestionIndex, updatedQuestion)}
+              />
+              <div className="question-navigation">
+                <button onClick={handlePrevQuestion} disabled={currentQuestionIndex === 0} className="button">
+                  Previous
+                </button>
+                <span>
+                  {currentQuestionIndex + 1}/{items.questions.length}
+                </span>
+                <button onClick={handleNextQuestion} className="button">
+                  Next
+                </button>
+              </div>
+            </>
+          ) : (
+            <div className="placeholder">Add Questions</div>
+          )}
+        </div>
 
-        
         <button onClick={handleSubmit} className="submit-button">
           Add Quiz
         </button>
