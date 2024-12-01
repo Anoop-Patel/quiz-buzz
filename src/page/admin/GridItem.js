@@ -5,6 +5,7 @@ const GridItem = ({ id, questionData = {}, onUpdateQuestion }) => {
     quizname: (
       <div className="quizname">
         <input
+        className="input"
           type="text"
           placeholder="Enter Quiz Name"
           value={questionData?.text || ""}
@@ -18,6 +19,8 @@ const GridItem = ({ id, questionData = {}, onUpdateQuestion }) => {
       <div className="timer">
         <input
           type="number"
+          className="input"
+
           placeholder="Enter Timer (in minutes)"
           value={questionData?.value || ""}
           onChange={(e) =>
@@ -30,6 +33,8 @@ const GridItem = ({ id, questionData = {}, onUpdateQuestion }) => {
       <div className="question">
         <input
           type="text"
+          className="input"
+
           placeholder="Enter question text"
           value={questionData?.text || ""}
           onChange={(e) =>
@@ -40,6 +45,8 @@ const GridItem = ({ id, questionData = {}, onUpdateQuestion }) => {
           <div key={idx} className="option">
             <input
               type="text"
+              className="input"
+
               placeholder={`Option ${idx + 1}`}
               value={option}
               onChange={(e) => {

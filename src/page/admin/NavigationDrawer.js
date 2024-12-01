@@ -11,9 +11,11 @@ const NavigationDrawer = () => {
   return (
     <div className="navigation-drawer">
       <h3>Components</h3>
+      <div className="item"> 
       {components.map((comp) => (
         <DraggableComponent key={comp.id} id={comp.id} label={comp.label} />
       ))}
+      </div>
     </div>
   );
 };
