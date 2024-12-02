@@ -138,13 +138,8 @@
           &:hover {
             background-color: rgb(252, 234, 228);
           }
-          &.correct {
-            background-color: rgb(222, 251, 222);
-          }
-          &.wrong {
-            background-color: rgb(255, 233, 233);
-          }
-          &.select {
+        
+          &.selected {
             background-color: rgb(252, 234, 228);
           }
           .number {

@@ -1,7 +1,7 @@
 import React from "react";
 import { Bgimage } from "../../assets/image";
 
-const QuizHome = ({ onOptionClick }) => {
+const QuizHome = ({ onOptionClick, data = [] }) => {
   return (
     <div className="user-home-wrapper">
       <div className="quiz-home">
@@ -12,18 +12,16 @@ const QuizHome = ({ onOptionClick }) => {
       </div>
       <div className="quiz-option-wrapper">
         <div className="topic-wrapper">
-          {[...Array(5)].map((item, key) => {
-            return (
-              <div
-                className="topic-box"
-                key={key}
-                onClick={onOptionClick} 
-              >
-                <img src={Bgimage} alt="icon" className="icon" loading="lazy" />
-                <span className="name">Name</span>
-              </div>
-            );
-          })}
+          {data?.map((item, key) => (
+            <div
+              className="topic-box"
+              key={key}
+              onClick={() => onOptionClick(item)}
+            >
+              <img src={Bgimage} alt="icon" className="icon" loading="lazy" />
+              <span className="name">{item?.quizname}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>

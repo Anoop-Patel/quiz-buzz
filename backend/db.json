@@ -1,0 +1,53 @@
+{
+  "quiz": [
+ 
+    {
+      "id": "4243",
+      "quizname": "test2",
+      "timer": "30",
+      "questions": [
+        {
+          "text": "what is the capital of India?",
+          "options": [
+            "Delhi",
+            "banglaore",
+            "mumbai",
+            "kolkatta"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "text": "Capital of UP?",
+          "options": [
+            "Lucknow",
+            "Varansi",
+            "Prayagraj",
+            "kanpur"
+          ],
+          "correctAnswer": 0
+        }, {
+          "text": "what is the capital of India?",
+          "options": [
+            "Delhi",
+            "banglaore",
+            "mumbai",
+            "kolkatta"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "text": "Capital of UP?",
+          "options": [
+            "Lucknow",
+            "Varansi",
+            "Prayagraj",
+            "kanpur"
+          ],
+          "correctAnswer": 0
+        }
+        
+        
+      ]
+    }
+  ]
+}
